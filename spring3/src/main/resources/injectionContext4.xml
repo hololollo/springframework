@@ -16,14 +16,14 @@
 	<bean id="mart1" class="com.spring3.dto.Mart">
 		<property name="martName" value="BigMart" />
 		<property name="fr">
-		 <set>
-		 	<ref bean="apple" />
-		 	<ref bean="mango" />
-		 	<ref bean="cherry" />
-		 	<bean class="com.spring3.dto.Kiwi">
-		 		<constructor-arg name="price" value="5000"></constructor-arg>
-		 	</bean>
-		 </set>
+			 <set>
+		 		<ref bean="apple" />
+		 		<ref bean="mango" />
+		 		<ref bean="cherry" />
+		 		<bean class="com.spring3.dto.Kiwi">
+		 			<constructor-arg name="price" value="5000"></constructor-arg>
+		 		</bean>
+		 	</set>
 		 </property>
 	</bean>
 </beans>

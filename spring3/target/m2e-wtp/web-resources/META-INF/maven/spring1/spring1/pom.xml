@@ -87,6 +87,13 @@
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
 		</dependency>
+			<!-- @Resource : 의존성 주입 라이브러리 -->
+		<dependency>
+		    <groupId>javax.annotation</groupId>
+		    <artifactId>javax.annotation-api</artifactId>
+		    <version>1.2</version>
+		</dependency>
+		
 		
 		<!-- Jsp/Servlet 라이브러리 -->
 		<dependency>
