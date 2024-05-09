@@ -1,3 +1,5 @@
+#Mapper확인
+
 use spring;
 
 create table sample (num int, title varchar(50), res timestamp );
