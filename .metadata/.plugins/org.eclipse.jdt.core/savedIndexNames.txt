@@ -1,8 +1,0 @@
-INDEX VERSION 1.131+D:\kang\springframework\.metadata\.plugins\org.eclipse.jdt.core
-3496110522.index
-1865797976.index
-1293872833.index
-3558326139.index
-2735771629.index
-1133269011.index
-881549445.index
