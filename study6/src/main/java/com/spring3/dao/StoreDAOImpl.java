@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.spring3.dto.Store;
+
 @Repository
 public class StoreDAOImpl implements StoreDAO {
 
@@ -15,19 +16,16 @@ public class StoreDAOImpl implements StoreDAO {
 	
 	@Override
 	public List<Store> getStoreList() {
-		// TODO Auto-generated method stub
 		return sqlSession.selectList("stage.getStoreList");
 	}
 
 	@Override
 	public Store getStore(int storeNum) {
-		// TODO Auto-generated method stub
 		return sqlSession.selectOne("stage.getStore", storeNum);
 	}
 
 	@Override
 	public int maxNum() {
-		// TODO Auto-generated method stub
 		return sqlSession.selectOne("stage.maxNum");
 	}
 

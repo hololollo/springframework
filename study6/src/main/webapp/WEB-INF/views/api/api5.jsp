@@ -12,16 +12,19 @@
 <script src="https://code.jquery.com/jquery-Latest.js"></script> <!-- 가장 최신버전 -->
 </head>
 <body>
-<table>
-	<tbody id="tbody">
-	
-	</tbody>
-</table>
-	<div class="form" method="post">
+	<div class="form">
 		<input type="number" name="storeNum" id="storeNum" placeholder="번호입력" /><br>
 		<input type="text" name="storeName" id="storeName" placeholder="상점명 입력" /><br>
 		<button type="button" id="btn1">등록</button>
     </div>
+    <table>
+		<thead>
+			<th>번호</th><th>상점명</th>
+		</thead>
+		<tbody id="tbody">
+			
+		</tbody>
+	</table>
 	<script> 
 	$(document).ready(function() { 
 		$("#btn1").click(function() {

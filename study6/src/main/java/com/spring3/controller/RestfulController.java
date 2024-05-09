@@ -3,6 +3,8 @@ package com.spring3.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.spring3.dto.Sample;
 import com.spring3.dto.Store;
+import com.spring3.service.SampleService;
 import com.spring3.service.StoreService;
 import com.spring3.vo.Maker;
 
@@ -23,6 +27,11 @@ RESTfulAPI (Application Programming Interface of Representation State Transfer)
 @RestController // @ResponseBody + @Controller : JSON으로 출력
 @RequestMapping("/api/")
 public class RestfulController {
+	
+	private static final Logger log = LoggerFactory.getLogger(RestfulController.class);
+	
+	@Autowired
+	private SampleService sampleService;
 	
 	@Autowired
 	private StoreService storeService;
@@ -66,6 +75,13 @@ public class RestfulController {
 	public Store getApi5(@RequestBody Store store) {
 		storeService.insStore(store);
 		//Store를 json타입으로 만들어줌.
+		log.info("번호 : "+store.getStoreNum());
+		log.info("이름 : "+store.getStoreName());
 		return store;
+	}
+	@GetMapping("api6.do")
+	public List<Sample> postApi5() {
+		List<Sample> testList = sampleService.getSampleList(); 
+		return testList;
 	}
 }

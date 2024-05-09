@@ -41,6 +41,10 @@ public class Maker {
 	public void setStores(ArrayList<Store> stores) {
 		this.stores = stores;
 	}
+	@Override
+	public String toString() {
+		return "Maker [part=" + part + ", partNum=" + partNum + ", stores=" + stores + "]";
+	}
 	
 	
 
