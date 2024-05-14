@@ -15,6 +15,7 @@
 	<h2>${serverTime }</h2>
 	<h2>${author }</h2>
 	<h2>${company }</h2>
+	<p>${msg }</p>
 	<hr>
 	<ul>
 		<li><a href="${path2 }/ajax/">AJAX 테스트</a></li>
@@ -33,8 +34,17 @@
 	<ul>
 		<li><a href="${path2 }/custom/myInfo.do">마이페이지</a></li>
 		<li><a href="${path2 }/custom/myUpdate.do">회원정보수정</a></li>
+		<li><a href="${path2 }/custom/logout.do">로그아웃</a></li>
 	</ul>
-	</c:if>	
+	</c:if>
+	<ul>
+	<li><a href="${path2 }/board/boardList.do">게시판 목록</a></li>
+	</ul>
+		<c:if test="${sid.equals('admin') }">
+	<ul>
+		<li><a href="${path2 }/admin/customList.do">회원목록</a></li>
+	</ul>
+	</c:if>		
 	<hr>
 </body>
 </html>

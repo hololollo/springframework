@@ -67,7 +67,6 @@
 	                            	<a href="${path1 }/custom/myUpdate.do" class="button btn-primary">회원 정보수정</a>
 	                                <a href="${path1 }/custom/customDelete.do?id=${cus.id }" class="button btn-primary">회원 탈퇴</a>
 	                            </c:if>
-	                            <c:if></c:if>
 	                            <c:if test="${cus.id=='admin' }">
 	                                <a href="${path1 }/admin/customList.do" class="button btn-primary">회원 목록</a>
 	                            </c:if>
