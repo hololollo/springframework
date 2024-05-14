@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation=" http://www.springframework.org/schema/beans
+		 					 https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+<!-- 비어있는 객체의 기본 골자(빈 객체 생성 : No Argument): id=인스턴스 이름 class=위치-->
+<bean id="store1" class="com.spring3.dto.Store"></bean>
+	
+<!-- JAVA에서는 => Store store1 = new Store(); -->
+	
+	
+	
+<!-- 생성자 주입 : All Argument -->
+<bean id="store2" class="com.spring3.dto.Store">
+	<constructor-arg name="storeNum" value="1"></constructor-arg>
+	<constructor-arg name="storeName" value="Homplus"></constructor-arg>
+</bean>	
+		
+	<!-- JAVA에서는 => Store store1 = new Store(1, "Homplus") -->
+	
+	
+	
+<!-- 생성자 주입2 : All Argument value-->
+ 	<bean id="store3" class="com.spring3.dto.Store">
+			<constructor-arg name="storeNum">
+				<value>1</value>
+			</constructor-arg>
+			<constructor-arg name="storeName">
+			<value>KingMart</value>
+		 	</constructor-arg>
+		</bean>		
+	
+		<!--
+		Store store3 = new Store(2, "KingMart"); 
+	-->
+	
+	
+	<!-- 수정자 주입 : Setter injection -->
+  	<bean id="store4" class="com.spring3.dto.Store">
+		<property name="storeNum" value="1"></property>
+		<property name="storeName" value="Homplus"></property>
+	</bean>
+		<!--
+		Store store4 = new Store();
+		store4.setStoreNum(1);
+		store4.setStoreName("HomePlus"); 
+	 -->
+</beans>
