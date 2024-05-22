@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-	   <!-- 비어있는 객체의 기본 골자(빈 객체 생성 : No Argument): id=인스턴스 이름 class=위치-->
-	<bean id="pencil" class="com.spring3.dto.Pencil"> <!-- pensil생성시 getter/setter쓰지 않았음. 따라서 수정자 주입 불가능 -->
-		<constructor-arg name="proName" value="A001"></constructor-arg>
-		<constructor-arg name="price" value="1000"></constructor-arg>
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="pencil" class="com.spring1.dto.Pencil">
+		<constructor-arg name="proName">
+			<value>A001</value>
+		</constructor-arg>
+		<constructor-arg name="price" value="1000" />
 	</bean>
-		<!-- java로 pensil이라는 객체를 만든 것과 같음. -->
-
+	
 	<!-- 생성자 주입 -->
-	<bean id="shop1" class="com.spring3.dto.Shop">
-		<constructor-arg name="shopName" value="Joon's"></constructor-arg>
-		<constructor-arg name="product" ref="pencil"></constructor-arg> <!-- pensil의 id를 끌고 옴 -->
+	<bean id="shop1" class="com.spring1.dto.Shop">
+		<constructor-arg name="shopName" value="Daeil"></constructor-arg>
+		<constructor-arg name="product" ref="pencil"></constructor-arg>
 	</bean>
 	
 	<!-- 수정자 주입 -->
-	<bean id="shop2" class="com.spring3.dto.Shop">
-		<property name="shopName" value="Beom's"></property>
-		<property name="product" ref="pencil"></property>
+	<bean id="shop2" class="com.spring1.dto.Shop">
+		<property name="shopName" value="YoungPoong"></property>
+		<property name="product" ref="pencil"></property>	
 	</bean>
 	
 	<!-- 생성자 주입2 -->
-	<bean id="shop3" class="com.spring3.dto.Shop">
-		<constructor-arg name="shopName" >
-		<value>Kang's</value>
+	<bean id="shop3" class="com.spring1.dto.Shop">
+		<constructor-arg name="shopName">
+			<value>Kyobo</value>
 		</constructor-arg>
-		<constructor-arg name="product" >
-		<ref bean="pencil"></ref> <!-- 또는 한 줄로 입력했으니 그냥 /> 로 닫는다. -->
-		</constructor-arg> <!-- pensil의 id를 끌고 옴 -->
+		<constructor-arg name="product">
+			<ref bean="pencil" />
+		</constructor-arg>
 	</bean>
-	
 </beans>

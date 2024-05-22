@@ -3,16 +3,16 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="apple" class="com.spring3.dto.Apple">
+	<bean id="apple" class="com.spring1.dto.Apple">
 		<constructor-arg name="price" value="5000" />
 	</bean>
-	<bean id="mango" class="com.spring3.dto.Mango">
+	<bean id="mango" class="com.spring1.dto.Mango">
 		<constructor-arg name="size" value="400" />
 	</bean>
-	<bean id="cherry" class="com.spring3.dto.Cherry">
+	<bean id="cherry" class="com.spring1.dto.Cherry">
 		<constructor-arg name="amount" value="900" />
 	</bean>
-	<bean id="ware2" class="com.spring3.dto.Warehouse">
+	<bean id="ware2" class="com.spring1.dto.Warehouse">
 		<property name="map">
 			<map>
 				<entry>
@@ -21,7 +21,7 @@
 				</entry>
 				<entry key="no" value="1004" value-type="int"></entry>
 				<entry>
-					<key><value>good</value></key>
+					<key><value>apple</value></key>
 					<ref bean="apple"/>
 				</entry>
 				<entry>

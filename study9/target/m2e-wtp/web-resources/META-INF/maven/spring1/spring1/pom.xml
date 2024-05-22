@@ -1,9 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>spring1</groupId>
   <artifactId>spring1</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>spring3</name>
+  <name>study08</name>
   <packaging>war</packaging>
   <properties>
   	<java-version>11</java-version>
@@ -11,10 +12,8 @@
   	<org.aspectj-version>1.8.10</org.aspectj-version>
   	<org.slf4j-version>1.7.25</org.slf4j-version>
   </properties>
-  
-  <!-- 의존성 라이브러리 정보 -->
   <dependencies>
-  			<dependency>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${org.springframework-version}</version>
@@ -32,6 +31,13 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 				
+		<!-- aspectjweaver -->
+		<dependency>
+		  <groupId>org.aspectj</groupId>
+		  <artifactId>aspectjweaver</artifactId>
+		  <version>${org.aspectj-version}</version>
+		</dependency>
+						
 		<!-- AspectJ : 관점지향형(AOP) 기능 제공 라이브러리 -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -81,21 +87,15 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
-				<!-- @Inject : 의존성 주입 라이브러리 -->
+
+		<!-- @Inject : 의존성 주입 라이브러리 -->
 		<dependency>
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
 		</dependency>
-			<!-- @Resource : 의존성 주입 라이브러리 -->
-		<dependency>
-		    <groupId>javax.annotation</groupId>
-		    <artifactId>javax.annotation-api</artifactId>
-		    <version>1.2</version>
-		</dependency>
 		
-		
-		<!-- Jsp/Servlet 라이브러리 -->
+		<!-- JSP/Servlet 라이브러리 -->
 		<dependency>
 		    <groupId>javax.servlet</groupId>
 		    <artifactId>javax.servlet-api</artifactId>
@@ -151,13 +151,7 @@
 		    <version>1.16</version>
 		</dependency>
 		
-				<!-- spring provider : 스프링에서 계약 테스트도구가 필요할 때 사용하는 라이브러리 -->
-<!-- 		<dependency>
-		    <groupId>au.com.dius.pact.provider</groupId>
-		    <artifactId>spring</artifactId>
-		    <version>4.3.2</version>
-		</dependency> -->
-		
+				
 		<!-- 스프링 트랜잭션 라이브러리 -->
 		<dependency>
 		    <groupId>org.springframework</groupId>
@@ -180,25 +174,25 @@
 		</dependency>
 		
 		<!--  오라클 jdbc 라이브러리 -->
-<!--		<dependency>
-    			<groupId>com.oracle.database.jdbc</groupId>
-   			 <artifactId>ojdbc11</artifactId>
-    			<version>21.1.0.0</version>
+		<dependency>
+		    <groupId>com.oracle.database.jdbc</groupId>
+		    <artifactId>ojdbc11</artifactId>
+		    <version>21.1.0.0</version>
 		</dependency>
--->		
+		
 		<!-- MySQL jdbc 라이브러리 -->
-<!--  		<dependency>
+<!-- 		<dependency>
 		    <groupId>mysql</groupId>
 		    <artifactId>mysql-connector-java</artifactId>
 		    <version>8.0.31</version>
-		</dependency>
--->
+		</dependency> -->
+
 		<!-- MariaDB jdbc 라이브러리 -->
-		<dependency>
+<!-- 		<dependency>
 		    <groupId>org.mariadb.jdbc</groupId>
 		    <artifactId>mariadb-java-client</artifactId>
 		    <version>3.1.0</version>
-		</dependency>
+		</dependency> -->
 
 		<!-- SQL 구문을 XML로 쉽게 구현하기 위한 MyBatis 라이브러리 -->
 		<dependency>
@@ -230,11 +224,12 @@
 		    <version>20200518</version>
 		</dependency>
 		
-		<dependency>
-    		<groupId>org.apache.clerezza.ext</groupId>
-   			<artifactId>org.json.simple</artifactId>
-   			<version>0.4</version>
-		</dependency>
+		<!-- org.json.simple JSON 라이브러리 -->
+	    <dependency>
+	      <groupId>org.apache.clerezza.ext</groupId>
+	      <artifactId>org.json.simple</artifactId>
+	      <version>0.4</version>
+	    </dependency>
 		
 		<!-- jackson 라이브러리 -->
 		<dependency>
@@ -249,7 +244,7 @@
 		    <version>1.9.13</version>
 		</dependency>
 		
-		<!-- 파일 첨부 및 업로드 라이브러리 -->		
+				<!-- 파일 첨부 및 업로드 라이브러리 -->		
 		<dependency>
 		    <groupId>commons-fileupload</groupId>
 		    <artifactId>commons-fileupload</artifactId>
@@ -297,15 +292,21 @@
 		<dependency>
 		    <groupId>org.hibernate.validator</groupId>
 		    <artifactId>hibernate-validator</artifactId>
-		    <version>6.0.8.Final</version>
+		    <version>6.2.0.Final</version>
 		</dependency>
 		<dependency>
 		    <groupId>javax.xml.bind</groupId>
 		    <artifactId>jaxb-api</artifactId>
 		    <version>2.3.0</version>
 		</dependency>
-
-		 <!-- 스프링 암호화 라이브러리 -->
+		
+		<dependency>
+		    <groupId>javax.annotation</groupId>
+		    <artifactId>javax.annotation-api</artifactId>
+		    <version>1.2</version>
+		</dependency>
+		
+	    <!-- 스프링 암호화 라이브러리 -->
 	    <dependency>
 	      <groupId>org.springframework.security</groupId>
 	      <artifactId>spring-security-core</artifactId>
@@ -327,46 +328,43 @@
 	      <version>5.4.0</version>
 	    </dependency>
 		
-		
   </dependencies>
-  <!-- 의존성 라이브러리 등록 완료 -->
-  <!-- 컴파일 방식/빌드 도구 -->
   <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-eclipse-plugin</artifactId>
-                <version>2.9</version>
-                <configuration>
-                    <additionalProjectnatures>
-                        <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
-                    </additionalProjectnatures>
-                    <additionalBuildcommands>
-                        <buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
-                    </additionalBuildcommands>
-                    <downloadSources>true</downloadSources>
-                    <downloadJavadocs>true</downloadJavadocs>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.5.1</version>
-                <configuration>
-                    <source>11</source>
-                    <target>11</target>
-                    <compilerArgument>-Xlint:all</compilerArgument>
-                    <showWarnings>true</showWarnings>
-                    <showDeprecation>true</showDeprecation>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.2.1</version>
-                <configuration>
-                    <mainClass>org.test.int1.Main</mainClass>
-                </configuration>
-            </plugin>
-        </plugins>
+    <plugins>
+        <plugin>
+            <artifactId>maven-eclipse-plugin</artifactId>
+            <version>2.9</version>
+            <configuration>
+                <additionalProjectnatures>
+                    <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+                </additionalProjectnatures>
+                <additionalBuildcommands>
+                    <buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+                </additionalBuildcommands>
+                <downloadSources>true</downloadSources>
+                <downloadJavadocs>true</downloadJavadocs>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>2.5.1</version>
+            <configuration>
+                <source>11</source>
+                <target>11</target>
+                <compilerArgument>-Xlint:all</compilerArgument>
+                <showWarnings>true</showWarnings>
+                <showDeprecation>true</showDeprecation>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.2.1</version>
+            <configuration>
+                <mainClass>org.test.int1.Main</mainClass>
+            </configuration>
+        </plugin>
+    </plugins>
   </build>
 </project>
